@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArrieWrites</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div id="left">
+                <ul>
+                    <li class="list"><a href="/" id="home">Home</a></li>
+                    <li class="list"><a href="#">Books</a></li>
+                    <li class="list"><a href="#">Movies</a></li>
+                    <li class="list"><a href="#">Motivation</a></li>
+                </ul>
+            </div>
+            <div id="right">
+                <hr>
+                <hr>
+                <hr>
+            </div>
+            <div class="rightSidebar" id="sideBar">
+                <div id="close"><img src="/static/right-arrow.png" alt="failed-to-load"></div>
+                <h1 class="sideBar-heading">Arrie's Blog</h1>
+                <!-- <hr>
+                <ul>
+                    <li class="sidebar-list">This is a comment in the list</li>
+                    <li class="sidebar-list">Lorem ipsum dolor sit amet consectetur</li>
+                    <li class="sidebar-list">Lorem ipsum dolor sit amet consectetur</li>
+                    <li class="sidebar-list">Lorem ipsum dolor sit amet consectetur</li>
+                    <li class="sidebar-list">Lorem ipsum dolor sit amet consectetur</li>
+                    <li class="sidebar-list">Lorem ipsum dolor sit amet consectetur</li>
+                </ul> -->
+            </div>
+        </nav>
+    </header>
+    <div id="container">
+        <div class="parent" id="parent">
+            <div class="left left-animate"><a href="/blogs/blog1/blog.html">
+                    <div class="blog" id="blog1"></div>
+                    <div>
+                        <h3 class="image-title">Deshe Bideshe(In A Land Far From Home)- a review</h3>
+                    </div>
+                </a></div>
+            <div class="right right-animate"><a href="/blogs/blog2/blog.html">
+                    <div class="blog" id="blog2"></div>
+                    <div>
+                        <h3 class="image-title">Why I love Ruskin Bond (So Much)!</h3>
+                    </div>
+                </a></div>
+            <div class="left left-animate"><a href="/blogs/blog3/blog.html">
+                    <div class="blog" id="blog3"></div>
+                    <div>
+                        <h3 class="image-title">Titli: An old school nostalgia</h3>
+                    </div>
+                </a></div>
+        </div>
+        <div id="overlay">
+        </div>
+        <div id="footer">
+            <div>© 2020-2021 Arrie.com</div>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            const blogLeft = document.getElementsByClassName("left");
+            const blogRight = document.getElementsByClassName("right");
+
+            Array.from(blogLeft).forEach(function (elems) {
+                elems.classList.add("left-animate");
+            })
+
+            Array.from(blogRight).forEach(function (elems) {
+                elems.classList.add("right-animate");
+            })
+        }
+
+
+        document.getElementById("right").addEventListener('click', function () {
+            console.log("Fired");
+            document.getElementById("sideBar").classList.add("rightSidebar-visible");
+            document.getElementById("overlay").classList.add("dim");
+            document.getElementsByTagName("body")[0].setAttribute("style", "overflow: hidden;")
+        })
+
+        let sideBarclose = document.getElementById("close");
+        sideBarclose.addEventListener("click", close);
+
+        function close() {
+            // document.getElementById("sideBar").classList.replace("rightSidebar-visible", "rightSidebar");
+            document.getElementById("sideBar").classList.remove("rightSidebar-visible");
+            console.log("Close Fired");
+            document.getElementById("overlay").classList.remove("dim");
+            document.getElementsByTagName("body")[0].removeAttribute("style", "overflow: hidden;")
+            // setTimeout(() => {
+            //     document.getElementById("sideBar").setAttribute("style","display: none;")
+            // }, 1000);
+        }
+
+        document.getElementById("overlay").addEventListener("click", close);
+    </script>
+</body>
+
+</html>
