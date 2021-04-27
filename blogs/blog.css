@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Montserrat:wght@300&display=swap');
+
+
+.postHeading{
+    font-family: 'Arvo', serif;
+    font-weight: lighter;
+}
+
+.post{
+    font-family: 'Montserrat', sans-serif;
+    margin: 5rem auto;
+    font-size: 1.5rem;
+    color: #444444;
+    width: 50rem;
+}
+
+.postPara{
+    margin: 2rem 0;
+}
+
+.postFeatured{
+    width: inherit;
+    margin-top: 3rem;
+}
